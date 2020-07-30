@@ -31,4 +31,6 @@ object MConstants {
     const val USER_ACCEPTANCE_STATUS_ACCEPTED = 1
     const val USER_ACCEPTANCE_STATUS_YET_TO_TAKE_DECISION = 2
 
+    const val USER_AGE_UNIT = "yrs"
+
 }

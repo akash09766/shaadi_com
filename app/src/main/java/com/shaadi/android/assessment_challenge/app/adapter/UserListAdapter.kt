@@ -68,36 +68,59 @@ class UserListAdapter :
     override fun onBindViewHolder(holder: UserListViewHolder, position: Int) {
         val item = userList[position]
 
-        if(item?.acceptance_status == MConstants.USER_ACCEPTANCE_STATUS_YET_TO_TAKE_DECISION){
+        if (item?.acceptance_status == MConstants.USER_ACCEPTANCE_STATUS_YET_TO_TAKE_DECISION) {
             holder.userActionGroup.visible()
             holder.acceptanceStatusTv.invisible()
-        }else{
+        } else {
             holder.userActionGroup.invisible()
             holder.acceptanceStatusTv.visible()
-            if(item?.acceptance_status == MConstants.USER_ACCEPTANCE_STATUS_ACCEPTED){
-                holder.acceptanceStatusTv.setTextColor(ContextCompat.getColor(holder.acceptanceStatusTv.context,R.color.colorAccent))
-                holder.acceptanceStatusTv.text = holder.acceptanceStatusTv.context.getString(R.string.user_acceptance_status_accepted)
-            }else if(item?.acceptance_status == MConstants.USER_ACCEPTANCE_STATUS_REJECTED){
-                holder.acceptanceStatusTv.setTextColor(ContextCompat.getColor(holder.acceptanceStatusTv.context,android.R.color.darker_gray))
-                holder.acceptanceStatusTv.text = holder.acceptanceStatusTv.context.getString(R.string.user_acceptance_status_rejected)
+            if (item?.acceptance_status == MConstants.USER_ACCEPTANCE_STATUS_ACCEPTED) {
+                holder.acceptanceStatusTv.setTextColor(
+                    ContextCompat.getColor(
+                        holder.acceptanceStatusTv.context,
+                        R.color.colorAccent
+                    )
+                )
+                holder.acceptanceStatusTv.background = ContextCompat.getDrawable(
+                    holder.acceptanceStatusTv.context,
+                    R.drawable.user_acceptance_tv_accepted_bg
+                )
+
+                holder.acceptanceStatusTv.text =
+                    holder.acceptanceStatusTv.context.getString(R.string.user_acceptance_status_accepted)
+            } else if (item?.acceptance_status == MConstants.USER_ACCEPTANCE_STATUS_REJECTED) {
+                holder.acceptanceStatusTv.setTextColor(
+                    ContextCompat.getColor(
+                        holder.acceptanceStatusTv.context,
+                        android.R.color.darker_gray
+                    )
+                )
+                holder.acceptanceStatusTv.background = ContextCompat.getDrawable(
+                    holder.acceptanceStatusTv.context,
+                    R.drawable.user_acceptance_tv_rejected_bg
+                )
+
+                holder.acceptanceStatusTv.text =
+                    holder.acceptanceStatusTv.context.getString(R.string.user_acceptance_status_rejected)
             }
         }
 
         holder.userProfilePic.loadImage(item?.user_profile_large)
         Log.d(TAG, "onBindViewHolder: user_profile_large : ${item?.user_profile_large}")
 
-        holder.userName.text = item?.user_first_name.plus(" ${item?.user_last_name?.substring(0,1)}")
-        holder.userAge.text = item?.user_age.toString()
+        holder.userName.text =
+            item?.user_first_name.plus(" ${item?.user_last_name?.substring(0, 1)}")
+        holder.userAge.text = item?.user_age.toString().plus(" ${MConstants.USER_AGE_UNIT}")
         holder.userLocation.text = item?.user_location
 
         holder.acceptIv.setOnClickListener {
             if (item != null) {
-                listener.onItemClick(item,true)
+                listener.onItemClick(item, true)
             }
         }
         holder.rejectIv.setOnClickListener {
             if (item != null) {
-                listener.onItemClick(item,false)
+                listener.onItemClick(item, false)
             }
         }
     }

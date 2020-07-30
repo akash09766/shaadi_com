@@ -26,4 +26,16 @@
     <dimen name="right_margin_guideline_percentage">0.98</dimen>
     <dimen name="left_margin_guideline_percentage">0.03</dimen>
     <dimen name="acceptance_status_tv_size">24sp</dimen>
+
+    <dimen name="user_acceptance_tv_accepted_bg_corner_radius">10dp</dimen>
+    <dimen name="user_acceptance_tv_accepted_bg_padding_bottom">10dp</dimen>
+    <dimen name="user_acceptance_tv_accepted_bg_padding_left">50dp</dimen>
+    <dimen name="user_acceptance_tv_accepted_bg_padding_right">50dp</dimen>
+    <dimen name="user_acceptance_tv_accepted_bg_padding_top">10dp</dimen>
+
+    <dimen name="user_acceptance_tv_rejected_bg_corner_radius">10dp</dimen>
+    <dimen name="user_acceptance_tv_rejected_bg_padding_bottom">10dp</dimen>
+    <dimen name="user_acceptance_tv_rejected_bg_padding_left">50dp</dimen>
+    <dimen name="user_acceptance_tv_rejected_bg_padding_right">50dp</dimen>
+    <dimen name="user_acceptance_tv_rejected_bg_padding_top">10dp</dimen>
 </resources>

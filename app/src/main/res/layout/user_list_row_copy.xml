@@ -142,7 +142,7 @@
                 app:layout_constraintTop_toTopOf="@+id/reject_iv" />
 
             <View
-                android:id="@+id/view"
+                android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1.0dp"
                 android:background="@android:color/darker_gray"

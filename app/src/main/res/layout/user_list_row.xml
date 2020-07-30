@@ -116,7 +116,7 @@
         app:layout_constraintTop_toTopOf="@+id/reject_iv" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1.0dp"
         android:background="@android:color/darker_gray"
@@ -152,15 +152,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:constraint_referenced_ids="accept_iv,accept_tv,reject_tv,reject_iv" />
+        app:constraint_referenced_ids="accept_iv,accept_tv,reject_tv,reject_iv,divider" />
 
     <TextView
         android:id="@+id/acceptance_status_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
+        android:background="@drawable/user_acceptance_tv_accepted_bg"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/acceptance_status_tv_size"
+        android:drawablePadding="10dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/right_margin_guideline"
