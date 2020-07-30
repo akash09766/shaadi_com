@@ -36,10 +36,11 @@ import kotlin.collections.ArrayList
 inline fun UserListingResponse.convertToDbModel(response: UserListingResponse): List<UserDetails>? {
 
     val userList  = ArrayList<UserDetails>()
+    Log.d("Extention", "convertToDbModel: response.results size : ${response.results?.size}")
 
     response.results?.forEach {
         userList.add(UserDetails(user_id = it.login.uuid,user_first_name = it.name.first,user_last_name = it.name.last,
-        user_age = it.dob.age,user_profile_large = it.picture.large,user_profile_medium = it.picture.medium,
+        user_age = it.dob.age,user_location = it.location.city.plus(", ${it.location.state.plus(", ${it.location.country}")}"),user_profile_large = it.picture.large,user_profile_medium = it.picture.medium,
             user_profile_thumbnail= it.picture.thumbnail))
    }
     Log.d("Extention", "convertToDbModel: userList size : ${userList?.size}")
@@ -60,7 +61,7 @@ fun getProgressDrawable(context: Context): CircularProgressDrawable {
 fun ImageView.loadImage(url: String?) {
     val option = RequestOptions()
         .diskCacheStrategy(DiskCacheStrategy.ALL)
-//        .placeholder(getProgressDrawable(context))
+        .placeholder(getProgressDrawable(context))
 
     Glide.with(context)
         .setDefaultRequestOptions(option)

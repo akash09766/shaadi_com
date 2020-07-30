@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="600dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/user_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/tint_iv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/user_info_gradient_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_margin_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_margin_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.98" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_center_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.45" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.78" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Akash W"
+                android:layout_marginTop="@dimen/user_list_row_user_name_tv_padding_top"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/user_list_row_user_name_tv_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/vertical_center_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_margin_guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+            <TextView
+                android:id="@+id/user_age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="30 yrs"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/user_list_row_user_age_tv_size"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toStartOf="@+id/vertical_center_guideline"
+                app:layout_constraintStart_toStartOf="@+id/left_margin_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+            <TextView
+                android:id="@+id/user_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nagpur, Maharashtra"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/user_list_row_user_location_tv_size"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toStartOf="@+id/right_margin_guideline"
+                app:layout_constraintStart_toStartOf="@+id/vertical_center_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/user_profession" />
+
+            <TextView
+                android:id="@+id/user_profession"
+                android:layout_marginTop="@dimen/user_list_row_user_profession_tv_margin_top"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sr. Software Developer"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/user_list_row_user_profession_tv_size"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toStartOf="@+id/right_margin_guideline"
+                app:layout_constraintStart_toStartOf="@+id/vertical_center_guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+            <ImageView
+                android:id="@+id/reject_iv"
+                android:layout_width="@dimen/user_list_row_reject_iv_width_height"
+                android:layout_height="@dimen/user_list_row_reject_iv_width_height"
+                android:src="@drawable/ic_baseline_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/left_margin_guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+
+            <TextView
+                android:id="@+id/reject_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_list_row_reject_tv_title"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/user_list_row_reject_tv_size"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/reject_iv"
+                app:layout_constraintStart_toEndOf="@+id/reject_iv"
+                app:layout_constraintTop_toTopOf="@+id/reject_iv" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toTopOf="@+id/guideline1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+            <ImageView
+                android:id="@+id/accept_iv"
+                android:layout_width="@dimen/user_list_row_accept_iv_width_height"
+                android:layout_height="@dimen/user_list_row_accept_iv_width_height"
+                android:src="@drawable/ic_baseline_check_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/right_margin_guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+
+            <TextView
+                android:id="@+id/accept_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/user_list_row_accept_tv_title"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/user_list_row_accept_tv_size"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/accept_iv"
+                app:layout_constraintEnd_toStartOf="@+id/accept_iv"
+                app:layout_constraintTop_toTopOf="@+id/accept_iv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

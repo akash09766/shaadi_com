@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Shaadi Assessment Challenge</string>
+    <string name="user_list_row_accept_tv_title">Accept</string>
+    <string name="user_list_row_reject_tv_title">Reject</string>
+
+    <string name="user_acceptance_status_accepted">Accepted</string>
+    <string name="user_acceptance_status_rejected">Rejected</string>
 </resources>

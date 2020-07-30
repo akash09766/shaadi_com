@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //CircularProgressDrawable
+    <dimen name="circular_progress_drawable_stroke_width">2dp</dimen>
+    <dimen name="circular_progress_drawable_stroke_radius">10dp</dimen>
+    <dimen name="search_list_item_spacing">10dp</dimen>
+    <dimen name="user_list_row_user_name_tv_padding_top">5dp</dimen>
+    <dimen name="user_list_row_user_profession_tv_margin_top">10dp</dimen>
+    <dimen name="user_list_row_reject_iv_width_height">40dp</dimen>
+    <dimen name="user_list_row_accept_iv_width_height">40dp</dimen>
+    <dimen name="user_list_row_accept_tv_size">20sp</dimen>
+    <dimen name="user_list_row_reject_tv_size">20sp</dimen>
+    <dimen name="user_list_row_user_profession_tv_size">20sp</dimen>
+    <dimen name="user_list_row_user_location_tv_size">18sp</dimen>
+    <dimen name="user_list_row_user_age_tv_size">18sp</dimen>
+    <dimen name="user_list_row_user_name_tv_size">20sp</dimen>
+
+    <dimen name="user_list_row_margin">20dp</dimen>
+    <dimen name="user_list_row_user_age_tv_margin_bottom">5dp</dimen>
+    <dimen name="user_list_row_user_location_tv_margin_bottom">10dp</dimen>
+    <dimen name="user_list_row_user_name_tv_margin_bottom">5dp</dimen>
+    <dimen name="user_list_row_height">350dp</dimen>
+    <dimen name="guideline1_percentage">0.85</dimen>
+
+    <dimen name="right_margin_guideline_percentage">0.98</dimen>
+    <dimen name="left_margin_guideline_percentage">0.03</dimen>
+    <dimen name="acceptance_status_tv_size">24sp</dimen>
+
+</resources>

@@ -7,5 +7,8 @@
     <color name="button_inactive_color">#727070</color>
     <color name="thumbnail_progress_color">#635A5A</color>
     <color name="detail_item_iv_foreground_tint_color">#27000000</color>
+    <color name="trans_black">#86000000</color>
+    <color name="user_info_gradient_bg_start_color">#48000000</color>
+    <color name="user_info_gradient_bg_end_color">#B7000000</color>
 
 </resources>

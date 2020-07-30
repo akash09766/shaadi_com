@@ -23,6 +23,8 @@ data class UserDetails(
     val user_last_name: String,
     @ColumnInfo(name = Column.user_age)
     val user_age: Int = 0,
+    @ColumnInfo(name = Column.user_location)
+    val user_location: String,
     @ColumnInfo(name = Column.user_profile_large)
     val user_profile_large: String,
     @ColumnInfo(name = Column.user_profile_medium)
@@ -41,6 +43,7 @@ data class UserDetails(
             const val user_first_name = "user_first_name"
             const val user_last_name = "user_last_name"
             const val user_age = "user_age"
+            const val user_location = "user_location"
             const val user_profile_large = "user_profile_large"
             const val user_profile_medium = "user_profile_medium"
             const val user_profile_thumbnail = "user_profile_thumbnail"

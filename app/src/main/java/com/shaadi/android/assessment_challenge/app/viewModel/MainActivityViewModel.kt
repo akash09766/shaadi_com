@@ -28,11 +28,26 @@ class MainActivityViewModel @Inject constructor(private val dataRepository: Data
     val _userDetailsList: LiveData<ViewState<List<UserDetails?>>>
         get() = userDetailsList
 
+    private var updateUserAcceptance = MutableLiveData<ViewState<Boolean>>()
+    val _updateUserAcceptance: LiveData<ViewState<Boolean>>
+        get() = updateUserAcceptance
+
     fun getUserListingData() {
         Log.d(TAG, "getUserListingData: ")
         job = CoroutineScope(Dispatchers.Main).launch {
             dataRepository.getUserListingData().collect {
                 userListingResponse.value = it
+            }
+        }
+    }
+    fun updateUserAcceptanceDetail(acceptance_status: Int, user_id: String?) {
+        Log.d(
+            TAG,
+            "updateUserAcceptanceDetail() called with: acceptance_status = $acceptance_status, user_id = $user_id"
+        )
+        job = CoroutineScope(Dispatchers.Main).launch {
+            dataRepository.updateUserAcceptanceDetail(acceptance_status = acceptance_status,user_id = user_id).collect {
+                updateUserAcceptance.value = it
             }
         }
     }

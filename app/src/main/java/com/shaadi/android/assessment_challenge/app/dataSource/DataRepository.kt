@@ -22,6 +22,7 @@ interface DataRepository {
     fun getGooglePing(): Flow<String>
     fun getUserListingData(): Flow<ViewState<UserListingResponse>>
     fun getUserListingFromDB(): Flow<ViewState<List<UserDetails?>>>
+    fun updateUserAcceptanceDetail(acceptance_status: Int, user_id: String?): Flow<ViewState<Boolean>>
 }
 
 @Singleton
@@ -54,6 +55,17 @@ class DefaultDataRepository @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
+    override fun updateUserAcceptanceDetail(acceptance_status: Int, user_id: String?): Flow<ViewState<Boolean>> {
+        Log.d(TAG, "updateUserAcceptanceDetail() called with: acceptance_status = $acceptance_status, user_id = $user_id")
+        return flow {
+            val updateStatus = userDetailsDao.updateAcceptanceStatus(acceptance_status = acceptance_status, user_id = user_id)
+            emit(ViewState.success(updateStatus == 1))
+
+        }.catch { error ->
+            emit(ViewState.error(NetworkError(error).getAppErrorMessage()))
+            Log.e(TAG, "error : ${error.message}")
+        }.flowOn(Dispatchers.IO)
+    }
 
     override fun getUserListingData(): Flow<ViewState<UserListingResponse>> {
         Log.d(TAG, "getCovidData: ")
